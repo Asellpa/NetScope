@@ -3,6 +3,8 @@ function Get-NetScopeConnections {
         [string]$ProviderFile
     )
 
+    $Timestamp = Get-Date
+
     $Connections = Get-NetTCPConnection |
         Where-Object {
             $_.State -eq "Established" -and
@@ -23,17 +25,24 @@ function Get-NetScopeConnections {
             $ProcessName = "Unknown"
         }
 
-        $Provider = Get-NetScopeProvider -IPAddress $Connection.RemoteAddress -ProviderFile $ProviderFile
+        $ProviderInfo = Get-NetScopeProviderInfo -IPAddress $Connection.RemoteAddress -ProviderFile $ProviderFile
 
         [PSCustomObject]@{
+            Timestamp     = $Timestamp
             Process       = $ProcessName
             PID           = $Connection.OwningProcess
+            Protocol      = "TCP"
+            State         = $Connection.State
             LocalAddress  = $Connection.LocalAddress
             LocalPort     = $Connection.LocalPort
             RemoteAddress = $Connection.RemoteAddress
             RemotePort    = $Connection.RemotePort
-            State         = $Connection.State
-            Provider      = $Provider
+            Provider      = $ProviderInfo.Provider
+            Category      = $ProviderInfo.Category
+            Country       = $null
+            ASN           = $null
+            LatencyMs     = $null
+            PacketLoss    = $null
         }
     }
 }
