@@ -1,0 +1,11 @@
+{
+  "Targets": [
+    { "Name": "Router", "Address": "192.168.1.1" },
+    { "Name": "ISP Gateway", "Address": "100.91.0.1" },
+    { "Name": "Cloudflare", "Address": "1.1.1.1" },
+    { "Name": "Google DNS", "Address": "8.8.8.8" },
+    { "Name": "Singapore DNS", "Address": "103.21.244.0" },
+    { "Name": "Frankfurt Test", "Address": "185.102.219.93" }
+  ],
+  "IntervalSeconds": 1
+}
