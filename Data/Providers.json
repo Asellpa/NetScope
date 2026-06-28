@@ -57,6 +57,18 @@
 "Akamai": {
   "Category": "CDN",
   "Prefixes": ["23.211.", "23.212.", "23.213."]
+ },
+"Yandex": {
+  "Category": "Search/Cloud",
+  "Prefixes": ["87.250.", "2a02:6b8:"]
+ },
+"Akamai": {
+  "Category": "CDN",
+  "Prefixes": ["23.196.", "23.211.", "23.212.", "23.213."]
+ },
+"NVIDIA": {
+  "Category": "Gaming/Drivers",
+  "Prefixes": ["72.25."]
  }
 
 }
