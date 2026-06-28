@@ -3,7 +3,7 @@ function Show-NetScopeConnectionDashboard {
         [array]$Connections
     )
 
-    Clear-Host
+  [Console]::SetCursorPosition(0, 0)
 
     Write-Host "============================================================"
     Write-Host "                  NetScope Connection Dashboard"
